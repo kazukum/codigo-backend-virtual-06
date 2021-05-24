@@ -60,27 +60,51 @@ rectangulo(anchura, altura)
 
 
 
+def dibujar_octagono():
+    grosor = int (input("Ingrese el grosor del octagono: "))
+    # es el grosor maximo que va a tener mi octagono
+    if grosor == 1:
+        return print("No puede tener como grosor el valor ")
+    tope = (2*(grosor-1))+grosor
+    espacio = grosor
+    for numero in range(grosor,tope+1,2):
+        espacio -= 1
+        espacios =" "* espacio
+        simbolo ="*"* numero
+        if(numero == tope):
+            limite= 0
+            while(limite < grosor):
+                print(simbolo)
+                limite += 1
+            break
+        print(espacios+simbolo)
+    espacio	+=1
+    for numero in range(tope-2,grosor-1,-2):
+        espacios =" "* espacio
+        espacio +=1
+        simbolo = "*"*numero
+        print(espacio*simbolo)
+
+dibujar_octagono()
+
+
+#n = int(input("Ingrese el numero para el OCTOGONO: "))
 
 
 
-
-n = int(input("Ingrese el numero para el OCTOGONO: "))
-
-
-
-for  i in range(n+1):
-   for j in range(n-i):
-       print(" ", end ="")
-   for k in range(2*i-1):
-        print("*",end="")
-   print("")
+#for  i in range(n+1):
+#   for j in range(n-i):
+#       print(" ", end ="")
+#   for k in range(2*i-1):
+#        print("*",end="")
+#   print("")
    
-for  i in range(n-1,0,-1):
-    for j in range(n-i):
-        print(" ",end="")
-    for k in range(2*i-1):
-        print("*",end="")
-    print("")   
+#for  i in range(n-1,0,-1):
+#    for j in range(n-i):
+#        print(" ",end="")
+#    for k in range(2*i-1):
+#        print("*",end="")
+#    print("")   
 
 
 
