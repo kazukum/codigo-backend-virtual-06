@@ -9,7 +9,7 @@ class Persona:
 
     def __str__(self):
 
-        return self.nombre + "su fehca de nacimiento es :" 
+        return self.nombre + "su fehca de nacimiento es :" + self.fecha_nac
 
 objPersona =Persona("Eduardo", "1991-04-22")
 objPersona2 =Persona("Angel","1989-01-14")
