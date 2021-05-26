@@ -49,3 +49,4 @@ class Persona:
 objePersona =Persona("Eduardo","De Rivero", "ederiveroman@gmail.com","123456")
 
 print(objePersona.passoword)
+#objePersona.__encriptar_passoword("Hola mundo")  # es para que no pueda acceder
