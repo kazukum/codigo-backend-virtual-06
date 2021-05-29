@@ -1,5 +1,5 @@
 
-
+from flask_cors import CORS
 from flask import Flask, request
 
 # __name__ => muestra si el archivo en el cual se esta llamando a la clase Flask, es el archivo
@@ -9,6 +9,9 @@ from flask import Flask, request
 
 # print(__name__)
 app = Flask(__name__)
+#hacerlo de esta manera hara que todos los valores se seteen a un que permita aboslitamente todos los origenes metodos y cabeceras.
+
+CORS(app, methods =["GET", "POST"], origins =["*"])
 productos =[]
 
 # un decorador es un patron de software que se utiliza para modificar el funcionmiento de una
@@ -16,7 +19,7 @@ productos =[]
 @app.route("/")
 def inicio():
     print("Me hicieron un llamado")
-    return "saludos del mi API"
+    return "saludos del mi API",500
 
 
 
