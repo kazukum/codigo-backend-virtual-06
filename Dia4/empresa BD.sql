@@ -1,4 +1,6 @@
 
+drop database if exists empresa;
+set Sql_safe_updates = 1;
 create database if not exists empresa;
 use empresa;
 
@@ -12,23 +14,26 @@ create table if not exists departamentos(
 
  id int  not null unique auto_increment primary key,
  nombre varchar(40),
- piso varchar(25)
+ piso int
  
 );
 
-create table if not exists personal(
+create table if not exists personales(
 
- id int primary key not null unique auto_increment,
+ id int not null unique auto_increment,
  nombre varchar(40),
  apellido varchar(40),
- identificador int,
- 
+ identificador text,
+ departamentos_id int,
  supervisor_id int,
- constraint presonal_personales
- foreign key (supervisor_id ) references personal(id),
  
-departamentos_id int,
-constraint relacion_personal_departamento
+ 
+ 
+ constraint presonales_personales
+ foreign key (supervisor_id ) references personales(id),
+ 
+
+constraint relacion_personales_departamento
 foreign key(departamentos_id) references departamentos(id) 
 );
 
@@ -38,4 +43,8 @@ INSERT INTO departamentos (nombre, piso)VALUES
                             ('Administracion',2),
                             ('Finanzas',2),
                             ('Marketing',3);
+                            
+select * from departamentos;
+select * from personales;
+
 
